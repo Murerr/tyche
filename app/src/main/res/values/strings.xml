@@ -4,4 +4,6 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="currency_title">Currency</string>
     <string name="distance_title">Distance</string>
+    <string name="speed_title">Speed</string>
+    <string name="temperature_title">Temperature</string>
 </resources>
