@@ -30,6 +30,12 @@
         <action
             android:id="@+id/action_view_pager_fragment_to_distance_fragment"
             app:destination="@id/distance_fragment" />
+        <action
+            android:id="@+id/action_view_pager_fragment_to_speed_fragment"
+            app:destination="@id/speed_fragment" />
+        <action
+            android:id="@+id/action_view_pager_fragment_to_temperature_fragment"
+            app:destination="@id/temperature_fragment" />
     </fragment>
 
     <fragment
@@ -41,5 +47,15 @@
         android:id="@+id/distance_fragment"
         android:name="murerr.tyche.DistanceFragment"
         android:label="@string/currency_title" />
+
+    <fragment
+        android:id="@+id/speed_fragment"
+        android:name="murerr.tyche.SpeedFragment"
+        android:label="@string/speed_title" />
+
+    <fragment
+        android:id="@+id/temperature_fragment"
+        android:name="murerr.tyche.TemperatureFragment"
+        android:label="@string/temperature_title" />
 
 </navigation>

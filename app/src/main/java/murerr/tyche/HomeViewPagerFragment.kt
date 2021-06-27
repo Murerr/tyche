@@ -22,9 +22,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import murerr.tyche.R
-import murerr.tyche.adapters.CURRENCY_PAGE_INDEX
-import murerr.tyche.adapters.DISTANCE_PAGE_INDEX
-import murerr.tyche.adapters.TychePagerAdapter
+import murerr.tyche.adapters.*
 import murerr.tyche.databinding.FragmentViewPagerBinding
 
 
@@ -56,6 +54,8 @@ class HomeViewPagerFragment : Fragment() {
         return when (position) {
             CURRENCY_PAGE_INDEX -> R.drawable.garden_tab_selector
             DISTANCE_PAGE_INDEX -> R.drawable.plant_list_tab_selector
+            SPEED_PAGE_INDEX -> R.drawable.plant_list_tab_selector
+            TEMPERATURE_PAGE_INDEX -> R.drawable.plant_list_tab_selector
             else -> throw IndexOutOfBoundsException()
         }
    }
@@ -64,6 +64,8 @@ class HomeViewPagerFragment : Fragment() {
         return when (position) {
             CURRENCY_PAGE_INDEX -> getString(R.string.currency_title)
             DISTANCE_PAGE_INDEX -> getString(R.string.distance_title)
+            SPEED_PAGE_INDEX -> getString(R.string.speed_title)
+            TEMPERATURE_PAGE_INDEX -> getString(R.string.temperature_title)
             else -> null
         }
     }
