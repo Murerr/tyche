@@ -52,10 +52,10 @@ class HomeViewPagerFragment : Fragment() {
 
    private fun getTabIcon(position: Int): Int {
         return when (position) {
-            CURRENCY_PAGE_INDEX -> R.drawable.garden_tab_selector
-            DISTANCE_PAGE_INDEX -> R.drawable.plant_list_tab_selector
-            SPEED_PAGE_INDEX -> R.drawable.plant_list_tab_selector
-            TEMPERATURE_PAGE_INDEX -> R.drawable.plant_list_tab_selector
+            CURRENCY_PAGE_INDEX -> R.drawable.currency_tab_selector
+            DISTANCE_PAGE_INDEX -> R.drawable.distance_tab_selector
+            SPEED_PAGE_INDEX -> R.drawable.speed_tab_selector
+            TEMPERATURE_PAGE_INDEX -> R.drawable.temperature_tab_selector
             else -> throw IndexOutOfBoundsException()
         }
    }
