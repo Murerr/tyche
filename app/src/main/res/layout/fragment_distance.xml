@@ -33,6 +33,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:layout_width="0dp"
+                    android:entries="@array/distance_spinner"
                     />
             </LinearLayout>
 

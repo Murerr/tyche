@@ -4,4 +4,18 @@
     <string name="distance_title">Distance</string>
     <string name="speed_title">Speed</string>
     <string name="temperature_title">Temperature</string>
+
+    <string-array name="distance_spinner">
+        <item>mm</item>
+        <item>cm</item>
+        <item>dm</item>
+        <item>m</item>
+        <item>km</item>
+        <item>in</item>
+        <item>ft</item>
+        <item>yd</item>
+        <item>mi</item>
+        <item>nm</item>
+        <item>ly</item>
+    </string-array>
 </resources>
