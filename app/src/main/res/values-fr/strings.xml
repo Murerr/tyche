@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tyche</string>
+    <string name="currency_title">Monnaie</string>
+    <string name="distance_title">Distance</string>
+    <string name="speed_title">Vitesse</string>
+    <string name="temperature_title">Température</string>
+</resources>

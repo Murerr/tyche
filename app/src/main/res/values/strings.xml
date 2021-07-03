@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">Tyche</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <string name="currency_title">Currency</string>
     <string name="distance_title">Distance</string>
     <string name="speed_title">Speed</string>
     <string name="temperature_title">Temperature</string>
-    <string name="menu_settings">Settings</string>
 </resources>
