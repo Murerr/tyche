@@ -14,12 +14,18 @@
  * limitations under the License.
  */
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayoutMediator
 import murerr.tyche.R
 import murerr.tyche.adapters.*
@@ -42,8 +48,36 @@ class HomeViewPagerFragment : Fragment() {
         // Set the icon and text for each tab
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.setIcon(getTabIcon(position))
-            tab.text = getTabTitle(position)
+            tab.text = getTabTitle(position);
         }.attach()
+
+        //viewPager.registerOnPageChangeCallback(TabLayoutOnPageChangeListener(tabLayout))
+
+        tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                val tabEditText = getTabEditText(tab.position, viewPager) // ?: throw Exception("Could not find EditText")
+                if (tabEditText != null){
+                    tabEditText.requestFocus()
+                    showKeyboard()
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                val tabEditText = getTabEditText(tab.position, viewPager) //?: throw Exception("Could not find EditText")
+                if (tabEditText != null) {
+                    tabEditText.clearFocus()
+                    hideKeyboard(tabEditText)
+                }
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+                val tabEditText = getTabEditText(tab.position, viewPager) // ?: throw Exception("Could not find EditText")
+                if (tabEditText != null){
+                    tabEditText.requestFocus()
+                    showKeyboard()
+                }
+            }
+        })
 
         return binding.root
     }
@@ -66,5 +100,34 @@ class HomeViewPagerFragment : Fragment() {
             TEMPERATURE_PAGE_INDEX -> getString(R.string.temperature_title)
             else -> null
         }
+    }
+
+    private fun getTabEditText(position: Int, viewPager: ViewPager2): EditText? {
+        val tab = viewPager.findViewWithTag("tab$position") as ViewGroup
+        return when (position) {
+            CURRENCY_PAGE_INDEX -> {
+                null //tab.findViewById(R.id.editTextDistance)
+            }
+            DISTANCE_PAGE_INDEX -> {
+                tab.findViewById(R.id.editTextDistance)
+            }
+            SPEED_PAGE_INDEX -> {
+                null //tab.findViewById(R.id.editTextDistance)
+            }
+            TEMPERATURE_PAGE_INDEX -> {
+                null //tab.findViewById(R.id.editTextDistance)
+            }
+            else -> null
+        }
+    }
+
+    private fun showKeyboard(){
+        val inputMethodManager = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY)
+    }
+
+    private fun hideKeyboard(editText: EditText){
+        val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(editText.windowToken, 0)
     }
 }
