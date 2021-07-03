@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Tyche</string>
-    <string name="currency_title">Currency</string>
+    <string name="currency_title">Monnaie</string>
     <string name="distance_title">Distance</string>
-    <string name="speed_title">Speed</string>
-    <string name="temperature_title">Temperature</string>
+    <string name="speed_title">Vitesse</string>
+    <string name="temperature_title">Température</string>
 
     <string-array name="distance_spinner">
         <item>mm</item>
@@ -11,11 +11,11 @@
         <item>dm</item>
         <item>m</item>
         <item>km</item>
-        <item>in</item>
+        <item>po</item>
         <item>ft</item>
         <item>yd</item>
         <item>mi</item>
-        <item>nm</item>
-        <item>ly</item>
+        <item>mn</item>
+        <item>al</item>
     </string-array>
 </resources>
